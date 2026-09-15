@@ -183,29 +183,7 @@ def normalize_bpm(phonk_tracks):
     return phonk_tracks
 print(normalize_bpm(phonk_tracks))
 
-kage_anime_users = {
-    "User_Abhishek": {"watch_minutes": 850, "tier": "free", "show_ads": True},
-    "User_Rahul": {"watch_minutes": 120, "tier": "free", "show_ads": True},
-    "User_Zoro": {"watch_minutes": 600, "tier": "premium", "show_ads": False},
-    "User_Levi": {"watch_minutes": 45, "tier": "free", "show_ads": True}
-}
-def update_user_tiers(kage_anime_users):
-    for user, data in kage_anime_users.items():
 
-        # Rule 1: Upgrade to VIP (You nailed the if statement!)
-        if data["watch_minutes"] > 500 and data["tier"] == "free":
-            kage_anime_users[user]["tier"] = "vip"
-            kage_anime_users[user]["show_ads"] = False  # <- Added the ad removal
-
-        # Rule 2 & 3: Demote if inactive, BUT protect Premium users!
-        elif data["watch_minutes"] < 50 and data["tier"] != "premium":
-            kage_anime_users[user]["tier"] = "inactive"
-
-    return kage_anime_users
-
-
-# Print the final result
-print(update_user_tiers(kage_anime_users))
 
 
 
